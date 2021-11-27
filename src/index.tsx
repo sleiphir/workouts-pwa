@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import Workout from './routes/Workout'
+import { ChakraProvider, Container } from '@chakra-ui/react';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider>
+      <Container m="auto" p="0" maxW="container.lg" centerContent>
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}></Route>
+          <Route path="/:tab" element={<App />}></Route>
+          <Route path="workouts/:id/:pageId" element={<Workout />}></Route>
+        </Routes>
+        </BrowserRouter>
+      </Container>
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

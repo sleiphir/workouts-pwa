@@ -1,0 +1,223 @@
+[{
+  "id": "b63390df-ffa5-4a81-9ecb-267c6247cc0c",
+  "name": "Workout #1",
+  "exercises": [{
+    "name": "Bulgarian Split Squat",
+    "media": "https://www.youtube.com/embed/G0Mo2LF8uLU",
+    "sets": [{
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }]
+  }, {
+    "name": "One Arm Dumbbell Row",
+    "media": "https://www.youtube.com/embed/xl1YiqQY2vA",
+    "sets": [{
+      "reps": 7,
+      "weight": 10
+    }, {
+      "reps": 7,
+      "weight": 10
+    }, {
+      "reps": 7,
+      "weight": 10
+    }]
+  }, {
+    "name": "Incline Dumbbell Press",
+    "media": "https://www.youtube.com/embed/Fv5EYoJfRt4",
+    "sets": [{
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }]
+  }, {
+    "name": "Dumbell Harmstring Curl",
+    "media": "https://www.youtube.com/embed/cSzoVHHnuu0",
+    "sets": [{
+      "reps": 10,
+      "weight": 20
+    }, {
+      "reps": 10,
+      "weight": 20
+    }, {
+      "reps": 10,
+      "weight": 20
+    }]
+  }, {
+    "name": "Seated Dumbbell lateral Raise",
+    "media": "https://www.youtube.com/embed/Fv5EYoJfRt4",
+    "sets": [{
+      "reps": 12,
+      "weight": 14
+    }, {
+      "reps": 12,
+      "weight": 14
+    }, {
+      "reps": 12,
+      "weight": 14
+    }]
+  }, {
+    "name": "Supinating Dumbbel Curl",
+    "media": "https://www.youtube.com/embed/LHbaf7ASZEY",
+    "sets": [{
+      "reps": 8,
+      "weight": 20
+    }, {
+      "reps": 8,
+      "weight": 20
+    }, {
+      "reps": 8,
+      "weight": 20
+    }, {
+      "reps": 8,
+      "weight": 20
+    }]
+  }, {
+    "name": "Single Leg Dumbbell Calf Raise",
+    "media": "https://www.youtube.com/embed/-5N00yrM748",
+    "sets": [{
+      "reps": 8,
+      "weight": 14
+    }, {
+      "reps": 8,
+      "weight": 14
+    }, {
+      "reps": 8,
+      "weight": 14
+    }]
+  }, {
+    "name": "Barbell Shrug",
+    "media": "https://www.youtube.com/embed/aavXuk399kg",
+    "sets": [{
+      "reps": 10,
+      "weight": 30
+    }, {
+      "reps": 10,
+      "weight": 30
+    }, {
+      "reps": 10,
+      "weight": 30
+    }]
+  }]
+}, {
+  "id": "27dd49fd-4ba0-4990-a89c-f861a99d76b5",
+  "name": "Workout #2",
+  "exercises": [{
+    "name": "Dumbbell Lunge",
+    "media": "https://www.youtube.com/embed/HPHsz_OkU8M",
+    "sets": [{
+      "reps": 8,
+      "weight": 20
+    }, {
+      "reps": 8,
+      "weight": 20
+    }, {
+      "reps": 8,
+      "weight": 20
+    }]
+  }, {
+    "name": "Lat Pull-Down",
+    "media": "https://www.youtube.com/embed/lueEJGjTuPQ",
+    "sets": [{
+      "reps": 7,
+      "weight": 50
+    }, {
+      "reps": 7,
+      "weight": 50
+    }, {
+      "reps": 7,
+      "weight": 50
+    }]
+  }, {
+    "name": "Seated Overhead Dumbbell Press",
+    "media": "https://www.youtube.com/embed/Y_dURpsShAc",
+    "sets": [{
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }, {
+      "reps": 7,
+      "weight": 20
+    }]
+  }, {
+    "name": "Romanian Barbell Deadlift",
+    "media": "https://www.youtube.com/embed/9rYbDx8vzao",
+    "sets": [{
+      "reps": 10,
+      "weight": 40
+    }, {
+      "reps": 10,
+      "weight": 40
+    }, {
+      "reps": 10,
+      "weight": 40
+    }]
+  }, {
+    "name": "Flat Dumbbell Fly",
+    "media": "https://www.youtube.com/embed/e4GYbhRDFps",
+    "sets": [{
+      "reps": 10,
+      "weight": 14
+    }, {
+      "reps": 10,
+      "weight": 14
+    }, {
+      "reps": 10,
+      "weight": 14
+    }]
+  }, {
+    "name": "Overhead Dumbbell Extension",
+    "media": "https://www.youtube.com/embed/mE3g3PusefI",
+    "sets": [{
+      "reps": 10,
+      "weight": 8
+    }, {
+      "reps": 10,
+      "weight": 8
+    }, {
+      "reps": 10,
+      "weight": 8
+    }, {
+      "reps": 10,
+      "weight": 8
+    }]
+  }, {
+    "name": "Weighted Crunch",
+    "media": "https://www.youtube.com/embed/cbwLMF7oJGI",
+    "sets": [{
+      "reps": 15,
+      "weight": 10
+    }, {
+      "reps": 15,
+      "weight": 10
+    }, {
+      "reps": 15,
+      "weight": 10
+    }]
+  }, {
+    "name": "Dumbbell Face Pull",
+    "media": "https://www.youtube.com/embed/_kvO1Xxh5fU",
+    "sets": [{
+      "reps": 15,
+      "weight": 8
+    }, {
+      "reps": 15,
+      "weight": 8
+    }, {
+      "reps": 15,
+      "weight": 8
+    }]
+  }]
+}]

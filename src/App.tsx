@@ -1,25 +1,77 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Tabs, TabList, Tab, TabPanels, TabPanel, Center } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './App.css';
+import WorkoutList from './components/WorkoutList/WorkoutList';
+
+enum TabEnum {
+  Workouts,
+  History,
+  Stats
+}
 
 function App() {
+  const [tabIndex, setTabIndex] = useState(0);
+  const params = useParams();
+  const tab = params.tab || 'workouts';
+
+  const updateUrl = (tab: string) => {
+    window.history.pushState(null, `Workouts - ${tab}`, `/${tab}`);
+  }
+
+  useEffect(() => {
+    console.log(TabEnum.Stats);
+    switch(tab) {
+      case 'workouts':
+        setTabIndex(TabEnum.Workouts);
+        break;
+      case 'history':
+        setTabIndex(TabEnum.History);
+        break
+      case 'stats':
+        setTabIndex(TabEnum.Stats);
+        break;
+      default:
+        setTabIndex(TabEnum.Workouts);
+    }
+  }, [tab]);
+
+  const handleTabChange = (index: number) => {
+    setTabIndex(index);
+    switch(index) {
+      case TabEnum.Workouts:
+        updateUrl('workouts');
+        break;
+      case TabEnum.History:
+        updateUrl('history');
+        break
+      case TabEnum.Stats:
+        updateUrl('stats');
+        break;
+      default:
+        updateUrl('workouts');
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Tabs isLazy isFitted w="full" index={tabIndex} onChange={handleTabChange}>
+      <TabList>
+        <Tab>Workouts</Tab>
+        <Tab>History</Tab>
+        <Tab>Stats</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <WorkoutList />
+        </TabPanel>
+        <TabPanel>
+          <Center>WORK IN PROGRESS</Center>
+        </TabPanel>
+        <TabPanel>
+          <Center>WORK IN PROGRESS</Center>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 }
 
