@@ -145,7 +145,7 @@ const Workout = () => {
         <Grid column="1" mx="auto">
           { session.workout?.exercises[page].sets.map((set: Set, i: number) =>
             <InputSet
-              key={`${page}-${i}`}
+              key={`${page}-${i}-${set.reps}-${set.weight}`}
               editMode={editMode}
               deleteFunc={() => deleteSet(i)}
               default={baseWorkout.exercises[page].sets[0]}
@@ -173,7 +173,6 @@ const Workout = () => {
           onConfirm={() => deleteExercise(page)}
           dialogHeader="Delete Exercise"
           dialogBody={`Are you sure you want to delete ${session.workout.exercises[page].name} for this session?`}
-          //onClick={() => deleteExercise(page)}
           colorScheme="red"
           variant="outline"
           size="md" m={2}
