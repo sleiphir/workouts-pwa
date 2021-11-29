@@ -17,9 +17,12 @@ const SessionHistory = () => {
 
   return (
     <Flex direction="column" mx="auto">
-      {sessions.map((session, index) => (
-        <SessionCard key={index} session={session} />
-      ))}
+      {sessions.length > 0 
+       ? sessions.map((session, index) =>
+          <SessionCard key={index} session={session} />
+        )
+        : <p>No sessions yet</p>
+      }
     </Flex>
   )
 }
