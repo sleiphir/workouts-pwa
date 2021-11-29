@@ -1,6 +1,6 @@
 import useStore from '../hooks/useStore';
 
-import { Flex } from '@chakra-ui/react';
+import { Center, Flex } from '@chakra-ui/react';
 import SessionCard from '../components/SessionCard/SessionCard';
 import { useEffect, useState } from 'react';
 import Session from '../models/Session';
@@ -21,7 +21,7 @@ const SessionHistory = () => {
        ? sessions.map((session, index) =>
           <SessionCard key={index} session={session} />
         )
-        : <p>No sessions yet</p>
+        : <Center>No sessions yet</Center>
       }
     </Flex>
   )
