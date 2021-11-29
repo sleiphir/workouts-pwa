@@ -24,7 +24,7 @@ export function WorkoutList() {
   return (
     <Flex direction="column">
       { store?.workouts 
-        ? store.workouts.map((workout: Workout) => (<WorkoutCard key={workout.id} {...workout} />))
+        ? store.workouts.map((workout: Workout) => (<WorkoutCard key={workout.id} state={workout} />))
         : <Spinner mx="auto" size="xl" />
       }
     </Flex>

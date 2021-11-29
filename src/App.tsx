@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './App.css';
 import WorkoutList from './components/WorkoutList/WorkoutList';
+import SessionsHistory from './routes/SessionsHistory';
 
 enum TabEnum {
   Workouts,
@@ -20,7 +21,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(TabEnum.Stats);
     switch(tab) {
       case 'workouts':
         setTabIndex(TabEnum.Workouts);
@@ -38,19 +38,19 @@ function App() {
 
   const handleTabChange = (index: number) => {
     setTabIndex(index);
+    let url = "workouts";
     switch(index) {
       case TabEnum.Workouts:
-        updateUrl('workouts');
+        url = 'workouts';
         break;
       case TabEnum.History:
-        updateUrl('history');
+        url = 'history';
         break
       case TabEnum.Stats:
-        updateUrl('stats');
+        url = 'stats';
         break;
-      default:
-        updateUrl('workouts');
     }
+    updateUrl(url);
   }
   
   return (
@@ -65,7 +65,7 @@ function App() {
           <WorkoutList />
         </TabPanel>
         <TabPanel>
-          <Center>WORK IN PROGRESS</Center>
+          <SessionsHistory />
         </TabPanel>
         <TabPanel>
           <Center>WORK IN PROGRESS</Center>

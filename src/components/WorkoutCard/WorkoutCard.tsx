@@ -1,15 +1,14 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button, ButtonGroup, IconButton, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { Exercise } from "../../models/Workout";
+import { Workout } from "../../models/Workout";
 
 interface Props {
-  id: string;
-  name: string;
-  exercises: Exercise[];
+  state: Workout
 }
 
-export function WorkoutCard({ id, name, exercises }: Props) {
+export function WorkoutCard({ state }: Props) {
+  const { id, exercises, name } = state;
   const navigate = useNavigate();
 
   const detailedExercises = exercises.map((exercise) => {

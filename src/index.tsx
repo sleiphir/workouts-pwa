@@ -9,7 +9,7 @@ import Workout from './routes/Workout'
 import { ChakraProvider, Container } from '@chakra-ui/react';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <ChakraProvider>
       <Container m="auto" p="0" maxW="container.lg" centerContent>
         <BrowserRouter>
@@ -21,7 +21,7 @@ ReactDOM.render(
         </BrowserRouter>
       </Container>
     </ChakraProvider>
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 

@@ -1,10 +1,13 @@
-import { Box, Flex, Text, InputGroup, InputRightAddon, NumberInput, NumberDecrementStepper, NumberIncrementStepper, NumberInputField, NumberInputStepper } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import { Box, Flex, Text, InputGroup, InputRightAddon, NumberInput, NumberDecrementStepper, NumberIncrementStepper, NumberInputField, NumberInputStepper, Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Set } from "../../models/Workout";
 
 interface Props {
   state: Set;
   default: Set;
+  editMode: boolean;
+  deleteFunc: (event: any) => void;
 }
 
 export function InputSet(props: Props) {
@@ -19,8 +22,9 @@ export function InputSet(props: Props) {
   }, [reps, weight, set]);
 
   return (
+    <>
     <Flex>
-      <Box flex="1" m={3}>
+      <Box shrink="1" grow="1" m={2}>
         <Text mb="8px">Reps</Text>
         <InputGroup size="lg">
           <NumberInput
@@ -28,6 +32,7 @@ export function InputSet(props: Props) {
             value={reps}
             onChange={value => setReps(value)}
             placeholder={`${props.default.reps}`}
+            autoCorrect="true"
             size="lg"
           >
             <NumberInputField />
@@ -39,7 +44,7 @@ export function InputSet(props: Props) {
           <InputRightAddon size="lg"><Text as="b">{props.default.reps}</Text></InputRightAddon>
         </InputGroup>	
       </Box>
-      <Box flex="1" m={3}>
+      <Box shrink="1" grow="1" m={2}>
         <Text mb="8px">Weight</Text>
         <InputGroup size="lg">
           <NumberInput
@@ -47,6 +52,7 @@ export function InputSet(props: Props) {
             value={weight}
             onChange={value => setWeight(value)}
             placeholder={`${props.default.weight}`}
+            autoCorrect="true"
             size="lg"
           >
             <NumberInputField />
@@ -58,7 +64,15 @@ export function InputSet(props: Props) {
           <InputRightAddon size="lg">Kg</InputRightAddon>
         </InputGroup>	
       </Box>
+      <Box my={2}>
+        { props.editMode &&
+          <Button onClick={props.deleteFunc} variant="outline" size="lg" mr={2} mt="32px" colorScheme="red">
+            <DeleteIcon fontSize="1rem" />
+          </Button>
+        }
+      </Box>
     </Flex>
+    </>
   )
 }
 
