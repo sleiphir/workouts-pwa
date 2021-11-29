@@ -1,7 +1,24 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import { Button, ButtonGroup, IconButton, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Workout } from "../../models/Workout";
+import {
+  Button,
+  ButtonGroup,
+  IconButton,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
+  Table,
+  Thead,
+  Tbody,
+  Th,
+  Tr,
+  Td
+} from "@chakra-ui/react";
 
 interface Props {
   state: Workout
@@ -11,10 +28,6 @@ export function WorkoutCard({ state }: Props) {
   const { id, exercises, name } = state;
   const navigate = useNavigate();
 
-  const detailedExercises = exercises.map((exercise) => {
-    return `${exercise.sets.length} × ${exercise.sets[0].reps} ${exercise.name}`;
-  });
-
   const pushWorkout = () => {
     navigate(`/workouts/${id}/1`);
   };
@@ -22,16 +35,31 @@ export function WorkoutCard({ state }: Props) {
   return (
       <ButtonGroup size="lg" m="3" mx="auto" isAttached variant="outline">
         <Button onClick={pushWorkout} mr="-px" size="lg">{name}</Button>
-        <Popover>
+        <Popover size="lg">
           <PopoverTrigger>
             <IconButton size="lg" aria-label="See details" icon={<ChevronDownIcon />} />
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton />
-            <PopoverHeader>Exercises</PopoverHeader>
+            <PopoverHeader textAlign="center" as="b">Details</PopoverHeader>
             <PopoverBody>
-              {detailedExercises.map((exercise, index) => <div key={index}>{exercise}</div>)}
+              <Table size="sm">
+                <Thead>
+                  <Tr>
+                    <Th>Sets×Reps</Th>
+                    <Th>Exercises</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                {
+                  exercises.map((exercise, i) => <Tr>
+                    <Td textAlign="center">{exercise.sets.length}×{exercise.sets[0].reps}</Td>
+                    <Td color="blue.400" textDecoration="underline"><a rel="noreferrer" target="_blank" href={exercise.media}>{exercise.name}</a></Td>
+                  </Tr>)
+                }
+                </Tbody>
+              </Table>
             </PopoverBody>
           </PopoverContent>
         </Popover>
